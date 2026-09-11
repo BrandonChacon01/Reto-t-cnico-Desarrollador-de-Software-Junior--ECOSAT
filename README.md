@@ -1,16 +1,37 @@
-# React + Vite
+# Sistema de Seguimiento de Incidencias (Helpdesk UI)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicación web desarrollada como solución al reto técnico para Desarrollador de Software Junior.
 
-Currently, two official plugins are available:
+## Demo en línea
+[Enlace a la aplicación desplegada](https://retotecnico-pi.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripción y Arquitectura
+La aplicación está diseñada bajo el concepto de un Helpdesk multinivel con una interfaz tipo cliente de correo electrónico (Outlook):
+- **Capa 1 (Autoservicio / FAQ): Muestra problemas comunes desplegables para reducir la generación de tickets innecesarios. Incluye la opción de crear un ticket si el problema no se resuelve.
+- Capa 2 y 3 (Gestión de Tickets): Visualización en bandeja de entrada codificada por colores según su estado (Nuevo - Azul, En progreso - Amarillo, Completado - Verde).
+- Regla de Negocio: Se limita la atención a 1 sola incidencia en progreso de manera simultánea para simular la capacidad de atención en tiempo real.
 
-## React Compiler
+## Tecnologías Utilizadas
+- React + Vite
+- Tailwind CSS
+- LocalStorage (Persistencia de datos)
+- Vercel (Hosting)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Instrucciones para ejecutar en local
+1. Clonar el repositorio:
+   git clone (https://github.com/BrandonChacon01/Reto-t-cnico-Desarrollador-de-Software-Junior--ECOSAT)
+2. Instalar dependencias en la terminal:
+    npm i
+3. Iniciar el servidor de desarrollo en la terminal:
+    npm run dev
 
-## Expanding the Oxlint configuration
+## Tiempo invertido y Decisiones
+Tiempo aproximado: ~3 horas.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Herramientas de IA utilizadas: GitHub copilot (para acelerar la estructuración de componentes y maquetación).
+
+Decisiones clave: Se optó por una arquitectura SPA con localStorage para garantizar un despliegue rápido, libre de errores de servidor.
+
+## Mejoras futuras
+Conexión a un backend real (Node.js/Express) con base de datos (PostgreSQL/MongoDB).
+Sistema de autenticación de usuarios y roles reales.
